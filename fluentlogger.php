@@ -49,4 +49,12 @@ class FluentLogger_Library extends Fluent\Logger\FluentLogger
 			$this->logger_config->options
 		);
 	}
+
+	/**
+	 * Utility log function
+	 */
+	public function log($tag, $payload)
+	{
+		$this->post($this->logger_config->prefix . "." . $tag, $payload);
+	}
 }
